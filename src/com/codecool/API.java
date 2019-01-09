@@ -23,13 +23,21 @@ public class API {
                     Event e = parser.next();
                     if (e == Event.KEY_NAME) {
                         switch (parser.getString()) {
+                            case "name" :
+                                parser.next();
+                                weather += (parser.getString() + ",");
+                                break;
+                            case "localtime" :
+                                parser.next();
+                                weather += (parser.getString().replace(" ", ",") + ",");
+                                break;
                             case "temp_c":
                                 parser.next();
-                                weather += (parser.getString() + " ");
+                                weather += (parser.getString() + ",");
                                 break;
                             case "text":
                                 parser.next();
-                                weather += (parser.getString() + "\n");
+                                weather += (parser.getString());
                                 break;
                         }
                     }
@@ -48,11 +56,23 @@ public class API {
         }
     }
 
-    public String getTextualWeather() {
+    public String getText() {
+        return weather.split(" ")[4];
+    }
+
+    public String getTemp() {
+        return weather.split(" ")[3];
+    }
+
+    public String getName() {
+        return weather.split(" ")[0];
+    }
+
+    public String getDate() {
         return weather.split(" ")[1];
     }
 
-    public float getTempC() {
-        return Float.parseFloat(weather.split(" ")[0]);
+    public String getTime() {
+        return weather.split(" ")[2];
     }
 }
