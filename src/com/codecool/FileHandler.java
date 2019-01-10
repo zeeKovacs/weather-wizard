@@ -30,9 +30,13 @@ public class FileHandler {
         }
     }
 
-    public void Write(String file, String line) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) {
-            bw.write(line);
+    public void Write(String file, Weather[] records) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+            for (Weather record : records) {
+                if (record != null) {
+                    bw.write(record.toWrite());
+                }
+            }
         } catch (IOException e) {
             System.out.println("IO Exception occured!");
         }

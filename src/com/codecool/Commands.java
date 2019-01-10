@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Commands {
 
-    public void list(Weather[] records) {
+    public void list(Weather[] array) {
         int i = 1;
-        for (Weather record : records) {
+        for (Weather record : array) {
             if (record != null) {
                 System.out.println(i + ": " + record);
                 i++;
@@ -14,14 +14,15 @@ public class Commands {
         }
     }
 
-    public void find(Weather[] records) {
+    public void find(Weather[] array) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a date (YYYY-MM-DD): ");
         String date = sc.nextLine();
-        for (Weather record : records) {
+        for (Weather record : array) {
             if (record.toString().split(" ")[3].equals(date)) {
                 System.out.println(record);
-            }      
+            }
+        sc.close();
         }
     }
 
@@ -33,26 +34,29 @@ public class Commands {
             System.out.println("Enter a " + labels[i]);
             rec[i] = sc.nextLine();
         }
+        sc.close();
         return new Weather(rec[0], rec[1], rec[2], rec[3], rec[4]);
     }
 
-    public Weather[] update(Weather[] records) {
-        list(records);
+    public Weather[] update(Weather[] array) {
+        list(array);
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the index of record you want to update!");
         int i = Integer.parseInt(sc.nextLine());
-        records[i-1] = add();
-        return records;
+        array[i-1] = add();
+        sc.close();
+        return array;
     }
 
-    public Weather[] remove(Weather[] records) {
+    public Weather[] remove(Weather[] array) {
         Wrapper wrap = new Wrapper();
-        list(records);
+        list(array);
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the index of record you want to remove!");
         int i = Integer.parseInt(sc.nextLine());
-        wrap.unwrap(records, i);
-        return records;
+        array = wrap.unwrap(array, i-1);
+        sc.close();
+        return array;
     }
 
     public void exit() {

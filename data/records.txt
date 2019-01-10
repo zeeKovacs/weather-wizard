@@ -1,7 +1,11 @@
-Miskolc,2019-01-09,13:51,-0.5,Moderate snow
-Miskolc,2019-01-09,13:57,-0.5,Moderate snow
-Miskolc,2019-01-09,13:57,-0.5,Moderate snow
-Miskolc,2019-01-09,13:57,-0.5,Moderate snow
-Miskolc,2019-01-09,13:57,-0.5,Moderate snow
-Miskolc,2019-01-09,14:00,-0.5,Moderate snow
-Miskolc,2019-01-10,11:34,-3.4,Cloudy
+Miskolc,2019-01-11,0:32,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:13,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:16,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:30,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:31,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:32,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:32,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:32,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:33,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:33,-4.4,Partly cloudy
+Miskolc,2019-01-11,0:33,-4.4,Partly cloudy
