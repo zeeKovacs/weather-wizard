@@ -4,3 +4,4 @@ Miskolc,2019-01-09,13:57,-0.5,Moderate snow
 Miskolc,2019-01-09,13:57,-0.5,Moderate snow
 Miskolc,2019-01-09,13:57,-0.5,Moderate snow
 Miskolc,2019-01-09,14:00,-0.5,Moderate snow
+Miskolc,2019-01-10,11:34,-3.4,Cloudy
