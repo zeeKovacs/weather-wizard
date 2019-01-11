@@ -42,12 +42,11 @@ public class Commands {
         return array;
     }
 
-    public Weather[] remove(Weather[] array, Scanner scan, Wrapper wrap) {
+    public int remove(Weather[] array, Scanner scan) {
         list(array);
         System.out.println("Enter the index of record you want to remove!");
         int i = Integer.parseInt(scan.nextLine());
-        array = wrap.unwrap(array, i);
-        return array;
+        return i;
     }
 
     public void exit() {

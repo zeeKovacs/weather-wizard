@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class UI {
     
-    public void Menu(String file, Weather[] array, Scanner sc, FileHandler fh, Wrapper wrap) {
+    public Weather[] Menu(String file, Weather[] array, Scanner sc, FileHandler fh, Wrapper wrap) {
         Commands c = new Commands();
         String[] labels = {"1: List", "2: Add", "3: Update", "4: Remove",
                         "5: Find", "6: Current", "7: Save", "X: Exit"};
@@ -18,13 +18,13 @@ public class UI {
                 c.list(array);
                 break;
             case "2" :
-                wrap.wrap(array, c.add(sc));
+                array = wrap.wrap(array, c.add(sc));
                 break;
             case "3" :
-                c.update(array, sc);
+                array = c.update(array, sc);
                 break;
             case "4" :
-                c.remove(array, sc, wrap);
+                array = wrap.unwrap(array, c.remove(array, sc));
                 break;
             case "5" :
                 c.find(array, sc);
@@ -40,5 +40,6 @@ public class UI {
             default:
                 System.out.println("Wrong input!");
         }
+        return array;
     }
 }
