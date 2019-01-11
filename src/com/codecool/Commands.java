@@ -46,7 +46,7 @@ public class Commands {
         list(array);
         System.out.println("Enter the index of record you want to remove!");
         int i = Integer.parseInt(scan.nextLine());
-        wrap.unwrap(array, i);
+        array = wrap.unwrap(array, i);
         return array;
     }
 

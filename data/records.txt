@@ -21,3 +21,4 @@ Miskolc,2019-01-11,16:33,-1.7,Partly cloudy
 Miskolc,2019-01-11,16:37,-1.7,Partly cloudy
 Miskolc,2019-01-11,16:38,-1.7,Partly cloudy
 Eger,2019-01-11,16:47,12.5,Bright
+Miskolc,2019-01-11,17:14,-2.6,Partly cloudy

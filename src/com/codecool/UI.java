@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class UI {
     
-    public void Menu(String file, Weather[] records, Scanner sc, FileHandler fh, Wrapper wrap) {
+    public void Menu(String file, Weather[] array, Scanner sc, FileHandler fh, Wrapper wrap) {
         Commands c = new Commands();
         String[] labels = {"1: List", "2: Add", "3: Update", "4: Remove",
                         "5: Find", "6: Current", "7: Save", "X: Exit"};
@@ -15,25 +15,25 @@ public class UI {
         String inp = sc.nextLine();
         switch (inp) {
             case "1" :
-                c.list(records);
+                c.list(array);
                 break;
             case "2" :
-                wrap.wrap(records, c.add(sc));
+                wrap.wrap(array, c.add(sc));
                 break;
             case "3" :
-                c.update(records, sc);
+                c.update(array, sc);
                 break;
             case "4" :
-                c.remove(records, sc, wrap);
+                c.remove(array, sc, wrap);
                 break;
             case "5" :
-                c.find(records, sc);
+                c.find(array, sc);
                 break;
             case "6" :
-                System.out.println(records[records.length - 1]);
+                System.out.println(array[array.length - 1]);
                 break;
             case "7" :
-                fh.Write(file, records);
+                fh.Write(file, array);
                 break;
             case "X" :
                 c.exit();
