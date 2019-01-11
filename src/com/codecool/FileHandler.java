@@ -10,7 +10,7 @@ import java.io.FileWriter;
 public class FileHandler {
 
     public Weather[] Read(String file) {
-        Weather[] record = new Weather[fileLines(file) + 1];
+        Weather[] record = new Weather[fileLines(file)];
         int i = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {

@@ -14,48 +14,39 @@ public class Commands {
         }
     }
 
-    public void find(Weather[] array) {
-        Scanner sc = new Scanner(System.in);
+    public void find(Weather[] array, Scanner scan) {
         System.out.println("Enter a date (YYYY-MM-DD): ");
-        String date = sc.nextLine();
+        String date = scan.nextLine();
         for (Weather record : array) {
             if (record.toString().split(" ")[3].equals(date)) {
                 System.out.println(record);
             }
-        sc.close();
         }
     }
 
-    public Weather add() {
+    public Weather add(Scanner scan) {
         String[] labels = {"city.", "date (YYYY-MM-DDDD).", "time (HH:MM).", "temp.", "textual."};
         String[] rec = new String[5];
-        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < labels.length; i++) {
             System.out.println("Enter a " + labels[i]);
-            rec[i] = sc.nextLine();
+            rec[i] = scan.nextLine();
         }
-        sc.close();
         return new Weather(rec[0], rec[1], rec[2], rec[3], rec[4]);
     }
 
-    public Weather[] update(Weather[] array) {
+    public Weather[] update(Weather[] array, Scanner scan) {
         list(array);
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter the index of record you want to update!");
-        int i = Integer.parseInt(sc.nextLine());
-        array[i-1] = add();
-        sc.close();
+        int i = Integer.parseInt(scan.nextLine());
+        array[i-1] = add(scan);
         return array;
     }
 
-    public Weather[] remove(Weather[] array) {
-        Wrapper wrap = new Wrapper();
+    public Weather[] remove(Weather[] array, Scanner scan, Wrapper wrap) {
         list(array);
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter the index of record you want to remove!");
-        int i = Integer.parseInt(sc.nextLine());
-        array = wrap.unwrap(array, i-1);
-        sc.close();
+        int i = Integer.parseInt(scan.nextLine());
+        wrap.unwrap(array, i);
         return array;
     }
 

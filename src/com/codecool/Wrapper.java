@@ -12,8 +12,8 @@ public class Wrapper {
     }
 
     public Weather[] unwrap(Weather[] array, int indexToRemove) {
-        array[indexToRemove] = array[array.length - 1];
-        Weather[] tempRecords = Arrays.copyOf(array, array.length-1);
+        array[indexToRemove - 1] = array[array.length - 1];
+        Weather[] tempRecords = Arrays.copyOf(array, array.length - 2);
         array = tempRecords;
         return array;
     }
