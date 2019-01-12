@@ -55,24 +55,4 @@ public class API {
             return null;
         }
     }
-
-    public String getText() {
-        return weather.split(" ")[4];
-    }
-
-    public String getTemp() {
-        return weather.split(" ")[3];
-    }
-
-    public String getName() {
-        return weather.split(" ")[0];
-    }
-
-    public String getDate() {
-        return weather.split(" ")[1];
-    }
-
-    public String getTime() {
-        return weather.split(" ")[2];
-    }
 }

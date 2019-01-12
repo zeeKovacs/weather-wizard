@@ -3,6 +3,19 @@ package com.codecool;
 import java.util.Scanner;
 
 public class Commands {
+    FileHandler fh = new FileHandler();
+    String file = "data/records.txt";
+    API api = new API();
+    Scanner sc = new Scanner(System.in);
+    Wrapper wr = new Wrapper();
+    protected Weather[] records;
+
+    public Weather[] boot() {
+        Weather[] records = fh.Read(file);
+        String[] rec = api.getWeather().split(",");
+        records = wr.wrap(records, new Weather(rec[0], rec[1], rec[2], rec[3], rec[4]));
+        return records;
+    }
 
     public void list(Weather[] array) {
         int i = 1;
