@@ -3,12 +3,10 @@ package com.codecool;
 import java.util.Scanner;
 
 public class Commands {
-    FileHandler fh = new FileHandler();
-    String file = "data/records.txt";
-    API api = new API();
-    Scanner sc = new Scanner(System.in);
-    Wrapper wr = new Wrapper();
-    protected Weather[] records;
+    private FileHandler fh = new FileHandler();
+    private String file = "data/records.txt";
+    private API api = new API();
+    private Wrapper wr = new Wrapper();
 
     public Weather[] boot() {
         Weather[] records = fh.Read(file);
