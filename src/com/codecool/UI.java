@@ -4,8 +4,12 @@ import java.util.Scanner;
 
 public class UI {
     
-    public Weather[] Menu(String file, Weather[] array, Scanner sc, FileHandler fh, Wrapper wrap) {
+    public Weather[] Menu(Weather[] array) {
+        Scanner sc = new Scanner(System.in);
+        FileHandler fh = new FileHandler();
+        Wrapper wrap = new Wrapper();
         Commands c = new Commands();
+        String file = "data/records.txt";
         String[] labels = {"1: List", "2: Add", "3: Update", "4: Remove",
                         "5: Find", "6: Current", "7: Save", "X: Exit"};
         for (String label : labels) {
