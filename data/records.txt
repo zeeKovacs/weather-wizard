@@ -5,6 +5,7 @@ Miskolc,2019-01-11,19:08,-4.4,Partly cloudy
 Miskolc,2019-01-11,19:10,-4.4,Partly cloudy
 Miskolc,2019-01-11,19:16,-4.4,Partly cloudy
 Miskolc,2019-01-11,19:18,-4.4,Partly cloudy
-Eger,1995-03-20,15:15,28,Bright
 Miskolc,2019-01-13,0:21,-4.1,Light snow
 Miskolc,2019-01-13,1:08,-4.1,Light snow
+Miskolc,2019-01-16,13:08,4.3,Partly cloudy
+Miskolc,2019-01-16,18:19,3.4,Partly cloudy
