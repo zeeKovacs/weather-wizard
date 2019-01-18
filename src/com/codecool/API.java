@@ -7,18 +7,16 @@ import java.net.URL;
 import javax.json.Json;
 import javax.json.stream.JsonParser;
 import javax.json.stream.JsonParser.Event;
-import javax.json.JsonException;
 import java.net.MalformedURLException;
 
 public class API {
     private String weather;
 
-    public String getWeather() {
+    public String getWeather() throws MalformedURLException, IOException {
         weather = "";
-        try {
             URL url = new URL("http://api.apixu.com/v1/current.json?key=fe2c7d968b2343b8b8a12457182312&q=Miskolc");
-            try (InputStream api = url.openStream();
-                JsonParser parser = Json.createParser(api)) {
+            InputStream api = url.openStream();
+            JsonParser parser = Json.createParser(api);
                 while (parser.hasNext()) {
                     Event e = parser.next();
                     if (e == Event.KEY_NAME) {
@@ -43,16 +41,5 @@ public class API {
                     }
                 }
                 return weather;
-            } catch (IOException e) {
-                System.out.println("IOException occured!");
-                return null;
-            } catch (JsonException e) {
-                System.out.println("Could not reach API!");
-                return null;
             }
-        } catch (MalformedURLException e) {
-            System.out.println("URL was not found!");
-            return null;
-        }
-    }
 }
