@@ -3,6 +3,7 @@ package com.codecool;
 import java.io.Serializable;
 
 public class Weather implements Serializable {
+    private static final long serialVersionUID = 4816798732108131990L;
     private String city;
     private String date;
     private String time;

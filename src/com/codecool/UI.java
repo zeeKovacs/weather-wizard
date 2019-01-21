@@ -14,13 +14,13 @@ public class UI {
             records = c.boot(records);
             current = records[records.length - 1];
         } catch (ClassNotFoundException l) {
-            System.out.println("ClassNotFoundException occured... program exits.");
+            System.out.println("ClassNotFoundException occurred... program exits.");
             System.exit(1);
         } catch (MalformedURLException e) {
             System.out.println("URL was not found!");
             System.exit(1);
         } catch (IOException i) {
-            System.out.println("IOException occured... program exits.");
+            System.out.println("IOException occurred... program exits." + i.getLocalizedMessage());
             System.exit(1);
         }
     }
